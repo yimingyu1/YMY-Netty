@@ -5,4 +5,7 @@ package cn.mingyu.netty;
  * @date 2022/01/17
  */
 public class Demo {
+    public static void main(String[] args) {
+
+    }
 }
