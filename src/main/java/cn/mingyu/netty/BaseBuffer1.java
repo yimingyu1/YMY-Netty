@@ -18,6 +18,8 @@ public class BaseBuffer1 {
             buffer.put(i * 2);
         }
         buffer.flip();
+        buffer.position(1);
+        buffer.limit(4);
         while (buffer.hasRemaining()){
             System.out.println(buffer.get());
         }
