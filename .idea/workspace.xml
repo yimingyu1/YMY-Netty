@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="6658f9ae-b7ed-452b-a1d6-08278a2df225" name="Default Changelist" comment="" />
+=======
+    <list default="true" id="6658f9ae-b7ed-452b-a1d6-08278a2df225" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/mingyu/netty/BaseBuffer1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/mingyu/netty/BaseBuffer1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/mingyu/netty/BaseBuffer1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/mingyu/netty/BaseBuffer1.class" afterDir="false" />
+    </list>
+>>>>>>> 7436f9989181091da38540f08ccd9277ed38239d
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -37,12 +44,17 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="Errors" />
   </component>
+<<<<<<< HEAD
   <component name="RunManager" selected="Application.BasicBuffer">
+=======
+  <component name="RunManager" selected="Application.NIOFileChannel01">
+>>>>>>> 7436f9989181091da38540f08ccd9277ed38239d
     <configuration name="BIOServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="cn.mingyu.netty.BIOServer" />
       <module name="My-Netty" />
@@ -56,9 +68,28 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+<<<<<<< HEAD
     <configuration name="BasicBuffer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="cn.mingyu.netty.BasicBuffer" />
       <module name="My-Netty" />
+=======
+    <configuration name="BaseBuffer1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="cn.mingyu.netty.BaseBuffer1" />
+      <module name="YMY-Netty" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cn.mingyu.netty.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="NIOFileChannel01" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="cn.mingyu.netty.NIOFileChannel01" />
+      <module name="YMY-Netty" />
+>>>>>>> 7436f9989181091da38540f08ccd9277ed38239d
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="cn.mingyu.netty.*" />
@@ -71,7 +102,12 @@
     </configuration>
     <recent_temporary>
       <list>
+<<<<<<< HEAD
         <item itemvalue="Application.BasicBuffer" />
+=======
+        <item itemvalue="Application.NIOFileChannel01" />
+        <item itemvalue="Application.BaseBuffer1" />
+>>>>>>> 7436f9989181091da38540f08ccd9277ed38239d
         <item itemvalue="Application.BIOServer" />
       </list>
     </recent_temporary>
@@ -86,7 +122,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1642389416174</updated>
+<<<<<<< HEAD
       <workItem from="1642389417852" duration="4481000" />
+=======
+      <workItem from="1642389417852" duration="2645000" />
+      <workItem from="1642430400913" duration="2737000" />
+>>>>>>> 7436f9989181091da38540f08ccd9277ed38239d
     </task>
     <servers />
   </component>
@@ -94,6 +135,7 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+<<<<<<< HEAD
     <state width="1398" height="347" key="GridCell.Tab.0.bottom" timestamp="1642473460249">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
@@ -114,5 +156,62 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="320" y="183" key="Vcs.Push.Dialog.v2/1440.0.1920.1080/0.0.1440.900@0.0.1440.900" timestamp="1642485027150" />
+=======
+    <state width="1398" height="212" key="GridCell.Tab.0.bottom" timestamp="1642467569597">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="212" key="GridCell.Tab.0.bottom/0.0.1440.900/1440.25.2560.1415@0.0.1440.900" timestamp="1642467569597" />
+    <state width="1398" height="347" key="GridCell.Tab.0.bottom/1440.0.1920.1080/0.0.1440.900@0.0.1440.900" timestamp="1642392530827" />
+    <state width="1398" height="212" key="GridCell.Tab.0.center" timestamp="1642467569596">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="212" key="GridCell.Tab.0.center/0.0.1440.900/1440.25.2560.1415@0.0.1440.900" timestamp="1642467569596" />
+    <state width="1398" height="347" key="GridCell.Tab.0.center/1440.0.1920.1080/0.0.1440.900@0.0.1440.900" timestamp="1642392530825" />
+    <state width="1398" height="212" key="GridCell.Tab.0.left" timestamp="1642467569596">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="212" key="GridCell.Tab.0.left/0.0.1440.900/1440.25.2560.1415@0.0.1440.900" timestamp="1642467569596" />
+    <state width="1398" height="347" key="GridCell.Tab.0.left/1440.0.1920.1080/0.0.1440.900@0.0.1440.900" timestamp="1642392530824" />
+    <state width="1398" height="212" key="GridCell.Tab.0.right" timestamp="1642467569596">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="212" key="GridCell.Tab.0.right/0.0.1440.900/1440.25.2560.1415@0.0.1440.900" timestamp="1642467569596" />
+    <state width="1398" height="347" key="GridCell.Tab.0.right/1440.0.1920.1080/0.0.1440.900@0.0.1440.900" timestamp="1642392530826" />
+    <state width="1398" height="198" key="GridCell.Tab.1.bottom" timestamp="1642466971047">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="198" key="GridCell.Tab.1.bottom/0.0.1440.900/1440.25.2560.1415@0.0.1440.900" timestamp="1642466971047" />
+    <state width="1398" height="198" key="GridCell.Tab.1.center" timestamp="1642466971047">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="198" key="GridCell.Tab.1.center/0.0.1440.900/1440.25.2560.1415@0.0.1440.900" timestamp="1642466971047" />
+    <state width="1398" height="198" key="GridCell.Tab.1.left" timestamp="1642466971047">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="198" key="GridCell.Tab.1.left/0.0.1440.900/1440.25.2560.1415@0.0.1440.900" timestamp="1642466971047" />
+    <state width="1398" height="198" key="GridCell.Tab.1.right" timestamp="1642466971047">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="198" key="GridCell.Tab.1.right/0.0.1440.900/1440.25.2560.1415@0.0.1440.900" timestamp="1642466971047" />
+    <state x="374" y="209" width="692" height="482" key="find.popup" timestamp="1642467412534">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="374" y="209" width="692" height="482" key="find.popup/0.0.1440.900/1440.25.2560.1415@0.0.1440.900" timestamp="1642467412534" />
+    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup" timestamp="1642467421877">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup/0.0.1440.900/1440.25.2560.1415@0.0.1440.900" timestamp="1642467421877" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/cn/mingyu/netty/BaseBuffer1.java</url>
+          <line>15</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+>>>>>>> 7436f9989181091da38540f08ccd9277ed38239d
   </component>
 </project>
