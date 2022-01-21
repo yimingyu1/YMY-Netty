@@ -38,24 +38,23 @@ public class Case1NIOServer {
     public void listen(){
         while (true){
             try {
-                while (true){
-                    if (selector.select(1000) != 0){
-                        Set<SelectionKey> selectionKeys = selector.selectedKeys();
-                        Iterator<SelectionKey> iterator = selectionKeys.iterator();
-                        while (iterator.hasNext()){
-                            SelectionKey selectionKey = iterator.next();
-                            if (selectionKey.isAcceptable()){
-                                SocketChannel socketChannel = serverSocketChannel.accept();
-                                socketChannel.configureBlocking(false);
-                                socketChannel.register(selector, SelectionKey.OP_READ, ByteBuffer.allocate(512));
-                                System.out.println(socketChannel.hashCode() + "上线了");
-                            }
-                            if (selectionKey.isReadable()){
-                                read(selectionKey);
-                            }
-                            iterator.remove();
+                if (selector.select(1000) != 0){
+                    Set<SelectionKey> selectionKeys = selector.selectedKeys();
+                    Iterator<SelectionKey> iterator = selectionKeys.iterator();
+                    while (iterator.hasNext()){
+                        SelectionKey selectionKey = iterator.next();
+                        if (selectionKey.isAcceptable()){
+                            SocketChannel socketChannel = serverSocketChannel.accept();
+                            socketChannel.configureBlocking(false);
+                            socketChannel.register(selector, SelectionKey.OP_READ, ByteBuffer.allocate(256));
+                            System.out.println(socketChannel.getRemoteAddress() + "上线了");
                         }
+                        if (selectionKey.isReadable()){
+                            read(selectionKey);
+                        }
+                        iterator.remove();
                     }
+
                 }
             } catch (Exception e){
                 e.printStackTrace();
@@ -67,21 +66,21 @@ public class Case1NIOServer {
 
     public void read(SelectionKey selectionKey){
         SocketChannel channel = null;
-        ByteBuffer buffer = null;
         try {
             channel = (SocketChannel) selectionKey.channel();
-            buffer = (ByteBuffer)selectionKey.attachment();
+            ByteBuffer buffer = (ByteBuffer)selectionKey.attachment();
             int messageLen = channel.read(buffer);
             if (messageLen > 0){
-                sendInfoToOther(new String(buffer.array()), selectionKey);
+                sendInfoToOther(new String(buffer.array(), 0, buffer.position()), selectionKey);
             }
             buffer.clear();
         }catch (Exception e){
-            e.printStackTrace();
             try {
-                System.out.println(channel.getRemoteAddress() + "离线了...");
-                selectionKey.cancel();
-                channel.close();
+                if (channel != null) {
+                    System.out.println(channel.getRemoteAddress() + "离线了...");
+                    selectionKey.cancel();
+                    channel.close();
+                }
             }catch (Exception e1){
                 e1.printStackTrace();
             }
@@ -92,7 +91,7 @@ public class Case1NIOServer {
 
     public void sendInfoToOther(String message, SelectionKey selectionKey){
         for(SelectionKey next: selector.keys()) {
-            if (!next.equals(selectionKey)) {
+            if (!next.equals(selectionKey) && !next.isAcceptable()) {
                 SocketChannel socketChannel = (SocketChannel) next.channel();
                 try {
                     socketChannel.write(ByteBuffer.wrap(message.getBytes()));
@@ -105,7 +104,8 @@ public class Case1NIOServer {
     }
 
 
-    public static void main(String[] args) throws IOException {
-
+    public static void main(String[] args) {
+        Case1NIOServer case1NIOServer = new Case1NIOServer();
+        case1NIOServer.listen();
     }
 }

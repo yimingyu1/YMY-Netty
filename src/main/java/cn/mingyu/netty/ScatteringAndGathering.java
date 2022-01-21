@@ -14,7 +14,7 @@ import java.util.Arrays;
 public class ScatteringAndGathering {
     public static void main(String[] args) throws IOException {
         ServerSocketChannel open = ServerSocketChannel.open();
-        InetSocketAddress inetSocketAddress = new InetSocketAddress(7001);
+        InetSocketAddress inetSocketAddress = new InetSocketAddress(7788);
         SocketChannel accept = open.bind(inetSocketAddress).accept();
         ByteBuffer[] byteBuffers = new ByteBuffer[2];
         byteBuffers[0] = ByteBuffer.allocate(5);
