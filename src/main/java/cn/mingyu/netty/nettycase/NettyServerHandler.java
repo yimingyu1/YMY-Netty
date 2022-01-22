@@ -6,6 +6,8 @@ import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
 import io.netty.util.CharsetUtil;
 
+import java.util.concurrent.TimeUnit;
+
 /**
  * ClassName: NettyServerHandler
  * Description:
@@ -41,6 +43,23 @@ public class NettyServerHandler extends ChannelInboundHandlerAdapter {
                 }
             }
         });
+
+        /**
+         * 解决方案2: 用户自定义定时任务 -》该任务是体积哦啊到scheduleTaskQueue中
+         */
+        ctx.channel().eventLoop().schedule(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    Thread.sleep(10 * 1000);
+                    ctx.writeAndFlush(Unpooled.copiedBuffer("hello, 客户端~002", CharsetUtil.UTF_8));
+
+                }catch (Exception e){
+                    e.printStackTrace();
+                }
+            }
+        }, 5, TimeUnit.SECONDS);
+
         /**
          * 将msg转为byteBuf
          * byteBuf是Netty提供的， 不是NIO的ByteBuffer

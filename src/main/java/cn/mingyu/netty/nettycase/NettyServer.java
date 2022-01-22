@@ -8,6 +8,8 @@ import io.netty.channel.EventLoopGroup;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
+import io.netty.util.concurrent.Future;
+import io.netty.util.concurrent.GenericFutureListener;
 
 /**
  * ClassName: NettyServer
@@ -42,6 +44,13 @@ public class NettyServer {
             System.out.println("...服务器 is ready...");
             // 绑定端口并同步，生成一个ChannelFuture对象
             ChannelFuture channelFuture = bootstrap.bind(6668).sync();
+            channelFuture.addListener(future -> {
+                if (future.isSuccess()){
+                    System.out.println("server bind port 6668 success");
+                } else {
+                    System.out.println("server bind port 6668 fail");
+                }
+            });
             // 对关闭通道进行监听
             channelFuture.channel().closeFuture().sync();
         }finally {
