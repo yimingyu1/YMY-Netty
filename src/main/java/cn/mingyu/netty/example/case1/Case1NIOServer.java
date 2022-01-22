@@ -36,6 +36,7 @@ public class Case1NIOServer {
     }
 
     public void listen(){
+        System.out.println(Thread.currentThread().getName());
         while (true){
             try {
                 if (selector.select(1000) != 0){
@@ -90,6 +91,7 @@ public class Case1NIOServer {
     }
 
     public void sendInfoToOther(String message, SelectionKey selectionKey){
+        System.out.println(Thread.currentThread().getName());
         for(SelectionKey next: selector.keys()) {
             if (!next.equals(selectionKey) && !next.isAcceptable()) {
                 SocketChannel socketChannel = (SocketChannel) next.channel();
