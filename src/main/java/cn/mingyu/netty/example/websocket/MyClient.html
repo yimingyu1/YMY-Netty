@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var socket;
+    if (window.WebSocket){
+        socket= new WebSocket("ws://localhost:7000/hello")
+    }
+</script>
+<form onsubmit="return false">
+    <textarea name="message"  cols="30" rows="10" style="height: 300px; width: 300px"></textarea>
+    <input type="button" value="发送消息" onclick="send(this.form.message.value)">
+    <textarea name="responseText" cols="30" rows="10" value="清空内容" onclick="document.getElementById('responseText').value=''"></textarea>
+</form>
+</body>
+</html>
