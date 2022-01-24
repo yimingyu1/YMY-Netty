@@ -8,13 +8,39 @@
 <script>
     var socket;
     if (window.WebSocket){
-        socket= new WebSocket("ws://localhost:7000/hello")
+        socket= new WebSocket("ws://localhost:7001/hello");
+        socket.onmessage = function (ev) {
+            var rt = document.getElementById("responseText");
+            console.log(ev)
+            rt.value = rt.value + "\n" + ev.data;
+        }
+        socket.onopen = function (ev) {
+            var rt = document.getElementById("responseText");
+            rt.value = "连接开启了..."
+        }
+        socket.onclose = function (ev) {
+            var rt = document.getElementById("responseText");
+            rt.value = rt.value + "\n" + "连接关闭了...";
+        }
+    } else {
+        alert("当前浏览器不支持websocket")
+    }
+    function send(message) {
+        if (!window.socket){
+            return;
+        }
+        if (socket.readyState == WebSocket.OPEN){
+            socket.send(message)
+        } else {
+            alert("连接没有开启...")
+        }
     }
 </script>
 <form onsubmit="return false">
-    <textarea name="message"  cols="30" rows="10" style="height: 300px; width: 300px"></textarea>
+    <textarea name="message" style="height: 300px; width: 300px"></textarea>
     <input type="button" value="发送消息" onclick="send(this.form.message.value)">
-    <textarea name="responseText" cols="30" rows="10" value="清空内容" onclick="document.getElementById('responseText').value=''"></textarea>
+    <textarea id="responseText" style="height: 300px; width: 300px"></textarea>
+    <input type="button" value="清空内容" onclick="document.getElementById('responseText').value=''"></input>
 </form>
 </body>
 </html>
