@@ -41,3 +41,5 @@
 ## Netty - protobuf入门实例2
 1. 客户端发送一个StudentPOJO / WrokerPOJO对象到服务器（通过protobuf编码）
 2. 服务端能够接收StudentPOJO / WrokerPOJO对象（需要判断类型）并显示属性信息（通过protobuf解码）
+> 解决方案：就是将多个类放在一个proto文件中，同时在设置一个类来用枚举的方式管理类型，同时设置这两个类为依赖属性，这样就可以先通过类型判断再获取相应的数据
+
