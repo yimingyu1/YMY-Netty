@@ -36,4 +36,8 @@
 
 ## Netty-protobuf入门使用
 1. 客户端发送一个StudentPOJO对象到服务器（通过protobuf编码）
-2. 服务端能够接着这个对象并显示属性信息（通过protobuf解码）
+2. 服务端能够接收这个对象并显示属性信息（通过protobuf解码）
+
+## Netty - protobuf入门实例2
+1. 客户端发送一个StudentPOJO / WrokerPOJO对象到服务器（通过protobuf编码）
+2. 服务端能够接收StudentPOJO / WrokerPOJO对象（需要判断类型）并显示属性信息（通过protobuf解码）
