@@ -33,3 +33,13 @@
 ## Netty通过WebSocket编程实现服务器和客户端长链接
 1. 实现基于webSocket的长连接的全双工的交互
 2. 客户端浏览器和服务器会相互感知，比如服务器关闭了，浏览器会感知，同样浏览器关闭了，服务器会感知
+
+## Netty-protobuf入门使用
+1. 客户端发送一个StudentPOJO对象到服务器（通过protobuf编码）
+2. 服务端能够接收这个对象并显示属性信息（通过protobuf解码）
+
+## Netty - protobuf入门实例2
+1. 客户端发送一个StudentPOJO / WrokerPOJO对象到服务器（通过protobuf编码）
+2. 服务端能够接收StudentPOJO / WrokerPOJO对象（需要判断类型）并显示属性信息（通过protobuf解码）
+> 解决方案：就是将多个类放在一个proto文件中，同时在设置一个类来用枚举的方式管理类型，同时设置这两个类为依赖属性，这样就可以先通过类型判断再获取相应的数据
+
