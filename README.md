@@ -45,3 +45,6 @@
 
 ## Netty的handler的调用机制
 1. 使用自定义的编码器和解码器来说明Netty的handler的调用机制
+
+## TCP粘包、拆包实例
+1. TCP粘包、拆包case实例
