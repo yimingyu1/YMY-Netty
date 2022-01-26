@@ -48,3 +48,7 @@
 
 ## TCP粘包、拆包实例
 1. TCP粘包、拆包case实例
+
+## TCP粘包和拆包解决方案
+1. 客户端发送5个Message对象，客户端每次发送一个Message对象
+2. 服务端每次接收一个Message对象，分5次进行解码，每读取到一个Message会回复一个Message对象给客户端
