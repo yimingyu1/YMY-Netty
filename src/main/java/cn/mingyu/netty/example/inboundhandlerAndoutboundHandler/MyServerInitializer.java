@@ -17,7 +17,7 @@ public class MyServerInitializer extends ChannelInitializer<SocketChannel> {
     protected void initChannel(SocketChannel socketChannel) throws Exception {
         // 此时需要传入一个long型解码器
         socketChannel.pipeline()
-                .addLast(new MyByteToLongDecoder())
+                .addLast(new MyByteToLongDecoder2())
                 .addLast(new MyLongToByteEncoder())
                 .addLast(new MyServerHandler());
     }
