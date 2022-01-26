@@ -17,14 +17,14 @@ import io.netty.util.CharsetUtil;
 public class MyClientHandler extends SimpleChannelInboundHandler<Long> {
     @Override
     protected void channelRead0(ChannelHandlerContext channelHandlerContext, Long aLong) throws Exception {
-
+        System.out.println("收到来自服务器" + channelHandlerContext.channel().remoteAddress() + " 的消息 " + aLong);
     }
 
     @Override
     public void channelActive(ChannelHandlerContext ctx) throws Exception {
         System.out.println("客户端 channelActive 被调用");
-//        ctx.writeAndFlush(12341L);
-        ctx.writeAndFlush(Unpooled.copiedBuffer("asdfasdfasasfdasdf", CharsetUtil.UTF_8));
+        ctx.writeAndFlush(12341L);
+//        ctx.writeAndFlush(Unpooled.copiedBuffer("asdfasdfasasfdasdf", CharsetUtil.UTF_8));
     }
 
     @Override

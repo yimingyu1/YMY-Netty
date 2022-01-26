@@ -18,6 +18,7 @@ public class MyServerInitializer extends ChannelInitializer<SocketChannel> {
         // 此时需要传入一个long型解码器
         socketChannel.pipeline()
                 .addLast(new MyByteToLongDecoder())
+                .addLast(new MyLongToByteEncoder())
                 .addLast(new MyServerHandler());
     }
 }

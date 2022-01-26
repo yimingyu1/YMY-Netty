@@ -16,6 +16,7 @@ public class MyServerHandler extends SimpleChannelInboundHandler<Long> {
     @Override
     protected void channelRead0(ChannelHandlerContext channelHandlerContext, Long aLong) throws Exception {
         System.out.println("收到来自客户端" + channelHandlerContext.channel().remoteAddress() + "的Long型数据：" + aLong);
+        channelHandlerContext.writeAndFlush(1331L);
     }
 
     @Override
